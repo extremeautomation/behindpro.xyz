@@ -1,0 +1,6 @@
+@import "../css/typography.css";
+
+body {
+  font-family: "Pixels";
+  font-size: 20px;
+}
