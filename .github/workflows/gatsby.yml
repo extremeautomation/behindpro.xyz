@@ -12,6 +12,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: enriikke/gatsby-gh-pages-action@v2
         with:
-          access-token: ${{ github.token }}:x-oauth-basic 
+          access-token: x-access-token:${{ github.token }}
           git-config-name: ${{ github.context.actor }}
           deploy-branch: gh-pages
