@@ -19,7 +19,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `public/images/icons/favicon-16x16.png`,
+        icon: `${__dirname}/static/images/icons/favicon-16x16.png`,
       },
     },
     `gatsby-plugin-gatsby-cloud`,
