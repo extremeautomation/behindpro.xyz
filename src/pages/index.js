@@ -8,9 +8,7 @@ export const query = graphql`
   query {
     allMarkdownRemark {
       edges {
-        node {
-          id
-        }
+        node
       }
     }
   }
@@ -20,7 +18,7 @@ const IndexPage = ({ data }) => {
   return (
     <LayoutInner>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <h3>{node.id}</h3>
+        <h3>{node}</h3>
       ))}
     </LayoutInner>
   )
