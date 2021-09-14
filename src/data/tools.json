@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Operating Systems",
+    "tools": ["linux", "mac"]
+  },
+  {
+    "title": "Programming Languages",
+    "tools": ["go", "java", "php"]
+  },
+  {
+    "title": "Package Managers",
+    "tools": ["apt", "yum"]
+  },
+  {
+    "title": "CI/CD Systems",
+    "tools": ["argo", "docker", "gitlab", "git", "gradle", "jenkins", "maven", "puppet", "terraform"]
+  },
+  {
+    "title": "HTTP Tools",
+    "tools": ["curl", "wget"]
+  }
+]

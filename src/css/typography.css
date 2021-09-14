@@ -1,33 +1,32 @@
 @font-face {
   font-family: "Arcade Love";
-  src:url("../fonts/Arcade Love.woff") format("woff");
+  src:url(../fonts/ArcadeLove.woff) format(woff);
 }
 @font-face {
   font-family: "Get Ready";
-  src:url("../fonts/Get Ready.woff") format("woff");
+  src:url(../fonts/GetReady.woff) format(woff);
 }
 @font-face {
   font-family: "High Score";
-  src:url("../fonts/High Score.woff") format("woff");
+  src:url(../fonts/HighScore.woff) format(woff);
 }
 @font-face {
   font-family: "Insert Coin";
-  src:url("../fonts/Insert Coin.woff") format("woff");
+  src:url(../fonts/InsertCoin.woff) format(woff);
 }
 @font-face {
   font-family: "Mytendo";
-  src:url("../fonts/Mytendo.woff") format("woff");
+  src:url(../fonts/Mytendo.woff) format(woff);
 }
 @font-face {
   font-family: "Pixel Matrix";
-  src:url("../fonts/Pixel Matrix.woff") format("woff");
+  src:url(../fonts/PixelMatrix.woff) format(woff);
 }
 @font-face {
   font-family: "Push Start";
-  src:url("../fonts/Push Start.woff") format("woff");
+  src:url(../fonts/PushStart.woff) format(woff);
 }
 @font-face {
   font-family: "Small Print";
-  src:url("../fonts/Small Print.woff") format("woff");
+  src:url(../fonts/SmallPrint.woff) format(woff);
 }
-

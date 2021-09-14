@@ -1,4 +1,5 @@
-export default function NotFound() {
-  // window.location = '/';
-  return null;
-}
+import React from "react"
+
+const NotFound = () => <div>404</div>
+
+export default NotFound

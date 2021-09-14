@@ -1,0 +1,54 @@
+@import "typography.css";
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto Mono;
+}
+menu {
+  margin: 0px;
+  padding: 0px 20px;
+}
+.header {
+  font: bold 40pt "Roboto Mono";
+  background-color: #3b4871;
+  min-width: 600px;
+  height: 120px;
+  padding: 30px 100px;
+  text-align: center;
+  transition: 0.3s;
+}
+.header:hover {
+  font: bold 40pt "Pixel Matrix";
+  background-color: #f55f74;
+}
+.logos {
+  display: inline;
+  padding: 0px 30px;
+}
+.accordion {
+  width: 20%;
+  background-color: #f55f74;
+  padding: 10px;
+}
+.accordionSummary {
+  background-color: #d53f54;
+}
+.accordionSummary:hover {
+  background-color: #3b4871;
+  transition: 0.3s;
+}
+.accordionDetails {
+  display: block;
+  background-color: #5b6891;
+}
+.tools {
+  margin: 0px;
+  padding: 0px;
+  font: 16pt "Insert Coin";
+  color: black;
+  text-decoration: none;
+}
+.tools:hover {
+  background-color: #3b4871;
+}
