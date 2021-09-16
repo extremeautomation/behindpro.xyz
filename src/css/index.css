@@ -26,22 +26,6 @@ menu {
   display: inline;
   padding: 0px 30px;
 }
-.accordion {
-  width: 20%;
-  background-color: #f55f74;
-  padding: 10px;
-}
-.accordionSummary {
-  background-color: #d53f54;
-}
-.accordionSummary:hover {
-  background-color: #3b4871;
-  transition: 0.3s;
-}
-.accordionDetails {
-  display: block;
-  background-color: #5b6891;
-}
 .tools {
   margin: 0px;
   padding: 0px;
