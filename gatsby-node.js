@@ -4,7 +4,7 @@ exports.createPages = ({ actions: { createPage } }) => {
   createPage({
     path: "/",
     component: require.resolve("./src/layout/layout.js"),
-    context: { data: menu }
+    context: { "menu": menu, "page": "/" }
   })
 
   menu.forEach(topitem => {
@@ -12,7 +12,7 @@ exports.createPages = ({ actions: { createPage } }) => {
       createPage({
         path: `/${subitem}`,
         component: require.resolve("./src/layout/layoutinner.js"),
-        context: { data: menu }
+        context: { "menu": menu, "page": subitem }
       })
     })
   })

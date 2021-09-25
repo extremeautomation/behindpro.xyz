@@ -1,4 +1,5 @@
-import * as React from "react"
+import React from "react"
+import "../css/index.css"
 
 const Footer = () => (
   <footer align="center">

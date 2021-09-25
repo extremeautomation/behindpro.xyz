@@ -1,38 +1,91 @@
-@import "typography.css";
+@font-face {
+  font-family: Arcade Love;
+  src:url(../fonts/ArcadeLove.woff) format("woff");
+}
+@font-face {
+  font-family: Get Ready;
+  src:url(../fonts/GetReady.woff) format("woff");
+}
+@font-face {
+  font-family: High Score;
+  src:url(../fonts/HighScore.woff) format("woff");
+}
+@font-face {
+  font-family: Insert Coin;
+  src:url(../fonts/InsertCoin.woff) format("woff");
+}
+@font-face {
+  font-family: Mytendo;
+  src:url(../fonts/Mytendo.woff) format("woff");
+}
+@font-face {
+  font-family: Pixel Matrix;
+  src:url(../fonts/PixelMatrix.woff) format("woff");
+}
+@font-face {
+  font-family: Push Start;
+  src:url(../fonts/PushStart.woff) format("woff");
+}
+@font-face {
+  font-family: Small Print;
+  src:url(../fonts/SmallPrint.woff) format("woff");
+}
+@font-face {
+  font-family: Sorry Game Over;
+  src:url(../fonts/SorryGameOver.woff) format("woff");
+}
 
 body {
   margin: 0px;
   padding: 0px;
-  font-family: Roboto Mono;
+  font: 14pt Roboto Mono;
 }
-menu {
-  margin: 0px;
-  padding: 0px 20px;
+.maintable {
+  display: flex;
+}
+.maincolumn1 {
+  flex: 25%;
+  padding: 20px;
+}
+.maincolumn2 {
+  flex: 75%;
+  padding: 20px 20px 20px 0px;
 }
 .header {
-  font: bold 40pt "Roboto Mono";
-  background-color: #3b4871;
   min-width: 600px;
-  height: 120px;
-  padding: 30px 100px;
+  padding: 20px 100px;
   text-align: center;
+  font: bold 40pt Pixel Matrix;
+  background-color: #3b4871;
   transition: 0.3s;
 }
 .header:hover {
-  font: bold 40pt "Pixel Matrix";
   background-color: #f55f74;
 }
+.intro {
+  margin: 0px auto;
+  max-width: 1000px;
+  padding: 0px 100px 20px 100px;
+  text-align: center;
+  font: 12pt Sorry Game Over;
+}
 .logos {
-  display: inline;
   padding: 0px 30px;
 }
 .tools {
-  margin: 0px;
-  padding: 0px;
-  font: 16pt "Insert Coin";
-  color: black;
-  text-decoration: none;
+  padding: 3px;
+  cursor: pointer;
 }
-.tools:hover {
-  background-color: #3b4871;
+.active {
+  background-color: #7b88b1;
+}
+.td1 {
+  font: 14pt Pixel Matrix;
+  color: white;
+  text-align: left;
+}
+.td2 {
+  font: 14pt Pixel Matrix;
+  color: white;
+  text-align: right;
 }

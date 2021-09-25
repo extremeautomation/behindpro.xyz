@@ -24,18 +24,10 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     {
-      resolve: `gatsby-plugin-web-font-loader`,
-      options: {
-        custom: {
-          families: [`Arcade Love`, `Get Ready`, `High Score`, `Insert Coin`, `Mytendo`, `Pixel Matrix`, `Push Start`, `Small Print`, `Sorry Game Over`]
-        }
-      }
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/`,
+        path: `${__dirname}/src/pages/`,
       },
     },
     `gatsby-transformer-remark`,

@@ -1,5 +1,9 @@
 [
   {
+    "title": "CI/CD Systems",
+    "tools": ["argo", "docker", "gitlab", "git", "gradle", "jenkins", "maven", "puppet", "terraform"]
+  },
+  {
     "title": "Operating Systems",
     "tools": ["linux", "mac"]
   },
@@ -10,10 +14,6 @@
   {
     "title": "Package Managers",
     "tools": ["apt", "yum"]
-  },
-  {
-    "title": "CI/CD Systems",
-    "tools": ["argo", "docker", "gitlab", "git", "gradle", "jenkins", "maven", "puppet", "terraform"]
   },
   {
     "title": "HTTP Tools",
