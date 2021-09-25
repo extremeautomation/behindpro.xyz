@@ -1,6 +1,5 @@
 import React from "react"
-import Helmet from "react-helmet"
-import { graphql } from "gatsby"
+import { navigate, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 import "../css/index.css"
@@ -19,10 +18,6 @@ const LayoutInner = ({ pageContext: { menu, page }, data }) => {
       html = edge.node.html;
     }
   })
-
-  if (html === null) {
-    return(<Helmet><meta http-equiv="refresh" content="0; url='/'"/></Helmet>);
-  }
 
   var classesAccordionSummary = makeStyles((theme) => ({
     root: {
