@@ -21,8 +21,8 @@ const Layout = ({ pageContext: { menu, page }}) => {
              {menu.map((topitem, topindex) => topitem.tools.map((subitem, subindex) => <Link to={`/${subitem}`} className={"logos"}
                                                                                         key={`Link${topindex}${subindex}`}>
                                                                                          <img
-                                                                                          src={`/images/logos/${subitem}.png`}
-                                                                                          width={`64`} alt={`${subitem}`}
+                                                                                          src={`/images/logos/png-pixelated/${subitem}.png`}
+                                                                                          width={`120`} alt={`${subitem}`}
                                                                                           key={`img${topindex}${subindex}`}/>
                                                                                        </Link>)
              )}

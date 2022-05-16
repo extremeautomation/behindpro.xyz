@@ -72,7 +72,7 @@ const LayoutInner = ({ pageContext: { menu, page }, data }) => {
              </div>
              <div className={"maincolumn2"}>
                <article>
-                 <img src={`/images/logos/${page}.png`} width={`256`} alt={`${page}`} style={{ float: "left" }}/>
+                 <img src={`/images/logos/png-pixelated/${page}.png`} width={`256`} alt={`${page}`} style={{ float: "left" }}/>
                  <span dangerouslySetInnerHTML={{__html: html}}></span>
                </article>
              </div>
