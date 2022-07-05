@@ -1,19 +1,62 @@
-var menu = JSON.parse(require("fs").readFileSync("src/data/tools.json"))
+// create static pages
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
-exports.createPages = ({ actions: { createPage } }) => {
+  // fetch list of markdown files
+  const result = await graphql(`{ allMarkdownRemark (
+    sort: { fields: [frontmatter___category, fileAbsolutePath], order: ASC }
+  ) {
+    nodes {
+      id
+      fileAbsolutePath
+      frontmatter {
+        category
+        title
+        description
+        keywords
+        date
+      }
+    }
+  } }`)
+
+  let menu = {}
+
+  // create menu array of articles
+  result.data.allMarkdownRemark.nodes.forEach(({ id, frontmatter: fm, fileAbsolutePath: pa }) => {
+    // file basename
+    pa = pa.split(/[\\/]/).pop()
+    pa = pa.split(/\./).shift()
+
+    // initialize with empty object
+    if (!menu.hasOwnProperty(fm.category)) {
+      menu[fm.category] = {}
+    }
+    if (!menu[fm.category].hasOwnProperty(pa)) {
+      menu[fm.category][pa] = {}
+    }
+
+    // store menu structure
+    menu[fm.category][pa] = {
+      "id": id,
+      "pa": pa,
+      "fm": fm
+    }
+  })
+
+  // create title page
   createPage({
     path: "/",
     component: require.resolve("./src/layout/layout.js"),
-    context: { "menu": menu, "page": "/" }
+    context: { "menu": menu }
   })
 
-  menu.forEach(topitem => {
-    topitem.tools.forEach(subitem => {
+  // secondary pages
+  Object.values(menu).forEach(top => {
+    Object.values(top).forEach(sub => {
       createPage({
-        path: `/${subitem}`,
+        path: `/${sub.pa}`,
         component: require.resolve("./src/layout/layoutinner.js"),
-        context: { "menu": menu, "page": subitem }
+        context: { "id": sub.id, "pa": sub.pa, "fm": sub.fm, "menu": menu }
       })
-    })
-  })
+  })})
+
 }

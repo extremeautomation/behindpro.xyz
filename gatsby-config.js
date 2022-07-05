@@ -30,6 +30,29 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown/`,
+      },
+    },
     `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-plugin-next-seo',
+      options: {
+        openGraph: {
+          type: 'website',
+          locale: 'en_US',
+          url: 'https:/behindpro.xyz/',
+          site_name: 'Behind Proxies',
+        },
+        twitter: {
+          handle: '@handle',
+          site: '@site',
+          cardType: 'https://behindpro.xyz/static/images/icons/favicon.png',
+        },
+      },
+    },
   ],
 }
