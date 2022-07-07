@@ -28,18 +28,15 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
     // initialize with empty object
     if (!menu.hasOwnProperty(fm.category)) {
-      menu[fm.category] = {}
-    }
-    if (!menu[fm.category].hasOwnProperty(pa)) {
-      menu[fm.category][pa] = {}
+      menu[fm.category] = []
     }
 
-    // store menu structure
-    menu[fm.category][pa] = {
+    // push markdown structure
+    menu[fm.category].push({
       "id": id,
       "pa": pa,
       "fm": fm
-    }
+    })
   })
 
   // create title page

@@ -1,0 +1,68 @@
+html, body {
+  margin: 0px;
+  line-height: 1.5;
+  font-family: "Montserrat",
+               "Segoe UI",
+               "Roboto",
+               "Helvetica Neue",
+               "Arial",
+               "Noto Sans",
+               "Sans Serif",
+               "Apple Color Emoji",
+               "Segoe UI Emoji",
+               "Segoe UI Symbol",
+               "Noto Color Emoji";
+}
+
+@font-face {
+  font-family: 'PixelMania';
+  font-weight: 400;
+  font-style: normal;
+  src: local('PixelMania'), url('../fonts/PixelMania.woff') format('woff');
+}
+
+header div {
+  background-color: #E46977;
+  border-bottom: 3px solid #111111;
+  white-space: nowrap;
+}
+
+header div img {
+  display: inline;
+  margin: 15px 40px;
+  vertical-align: middle;
+}
+
+header div a {
+  font: 16px Pixelmania;
+  color: #F0F0F0;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #111111;
+  margin-top: 40px;
+  border-top: 3px solid #E46977;
+  padding: 20px 40px 20px 40px;
+}
+
+footer div:nth-child(2) {
+  padding: 10px;
+}
+
+footer div {
+  white-space: nowrap;
+  text-align: center;
+}
+
+footer div a {
+  color: #F0F0F0;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+footer div a img {
+  margin: 6px;
+  display: inline;
+  vertical-align: middle;
+}
