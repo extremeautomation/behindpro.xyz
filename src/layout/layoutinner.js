@@ -9,7 +9,7 @@ const LayoutInner = ({ pageContext: { html, page, fm, menu } }) => {
     <article>
       <div>
         <div className="main-logo"><img src={`/img/logos/png/${page}.png`} alt={page}/></div>
-        <p align="justify" dangerouslySetInnerHTML={{__html: html}}></p>
+        <p align="justify">{html}</p>
       </div>
     </article>
     <Footer/>
