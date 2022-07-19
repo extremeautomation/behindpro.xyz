@@ -7,7 +7,7 @@ const Footer = () => {
       <div>
         <div>
           <span role="link" tabIndex="0" onClick={() => window.scrollTo(0, 0)} onKeyDown={null}>
-            <img src="img/other/top.png" width="13" height="8" alt="top"/>
+            <img src="/img/other/top.png" width="13" height="8" alt="top"/>
           </span>
         </div>
         <div>
