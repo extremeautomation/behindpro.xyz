@@ -41,10 +41,7 @@ const Header = ({ page, fm, menu }) => {
     publisherLogo: "https://extremeautomation.io/images/andrey-adamovich.jpg"
   }
 
-  const [isOpen, setOpen] = useState(false)
-
   const menuClick = (e) => {
-    setOpen(!isOpen)
     document.getElementById("burger").classList.toggle("open")
     document.getElementById("menu").classList.toggle("show")
     document.getElementById("blue1").classList.toggle("slide")
@@ -63,7 +60,7 @@ const Header = ({ page, fm, menu }) => {
       <div>
         <div>
           <div>
-            <a href="/"><img src="img/other/logo.png" width="60" height="53" alt="Behind Proxyz"/></a>
+            <a href="/"><img src="/img/other/logo.png" width="60" height="53" alt="Behind Proxyz"/></a>
           </div>
           <div>
             <a href="/">BEHIND PROXYZ</a>
@@ -84,7 +81,7 @@ const Header = ({ page, fm, menu }) => {
           <div>
             <span role="link" tabIndex="0" onClick={() => window.location = 'https://extremeautomation.io/'} onKeyDown={null}>
               created with
-              <img src="img/other/love.png" width="25" height="23" alt="love"/>
+              <img src="/img/other/love.png" width="25" height="23" alt="love"/>
             </span>
           </div>
           <div>
@@ -92,7 +89,7 @@ const Header = ({ page, fm, menu }) => {
           </div>
           <div>
             <span role="link" tabIndex="0" onClick={() => window.location = 'https://extremeautomation.io/'} onKeyDown={null}>
-              <img src="img/other/ea.png" width="120" height="24" alt="extremeautomation.io"/>
+              <img src="/img/other/ea.png" width="120" height="24" alt="extremeautomation.io"/>
             </span>
           </div>
         </div>

@@ -1,24 +1,23 @@
 document.body.onclick = (e) => {
-    let found = false
-  
-    for (let elem of document.elementsFromPoint(e.clientX, e.clientY)) {
-      console.log(elem.tagName)
+  let found = false
 
-      if (elem.tagName === "HEADER" || elem.tagName === "FOOTER") {
-        found = false
-        break
-      }
+  for (let elem of document.elementsFromPoint(e.clientX, e.clientY)) {
+    console.log(elem.tagName)
 
-      if (elem.classList.contains("blue1") || elem.classList.contains("blue2")) {
-        found = true
-      }
+    if (elem.tagName === "HEADER" || elem.tagName === "FOOTER") {
+      found = false
+      break
     }
 
-    if (isOpen && !found) {
-      setOpen(false)
-      document.getElementById("burger").classList.remove("open")
-      document.getElementById("menu").classList.remove("show")
-      document.getElementById("blue1").classList.remove("slide")
-      document.getElementById("blue2").classList.remove("slide")  
+    if (elem.classList.contains("blue1") || elem.classList.contains("blue2")) {
+      found = true
     }
   }
+
+  if (!found) {
+    document.getElementById("burger").classList.remove("open")
+    document.getElementById("menu").classList.remove("show")
+    document.getElementById("blue1").classList.remove("slide")
+    document.getElementById("blue2").classList.remove("slide")  
+  }
+}
