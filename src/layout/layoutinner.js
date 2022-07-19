@@ -3,19 +3,14 @@ import Header from "./header"
 import Footer from "./footer"
 import "../css/style.css"
 
-const LayoutInner = async ({ pageContext: { id, pa, fm, menu } }) => {
-
-  // fetch a given markdown file
-  const result = await graphql(`markdownRemark(id: { eq: ${id} }) {
-    id
-    html
-  }`)
-
+const LayoutInner = ({ pageContext: { html, page, fm, menu } }) => {
   return(<>
-    <Header pa={pa} fm={fm} menu={menu}/>
+    <Header page={page} fm={fm} menu={menu}/>
     <article>
-      <img src={`/images/logos/png-pixelated/${pa}.png`} alt={`${pa}`} style={{ float: "left" }}/>
-      <span dangerouslySetInnerHTML={{__html: result.data.html}}></span>
+      <div>
+        <div className="main-logo"><img src={`img/logos/png/${page}.png`} alt={page}/></div>
+        <p align="justify" dangerouslySetInnerHTML={{__html: html}}></p>
+      </div>
     </article>
     <Footer/>
   </>)

@@ -1,0 +1,312 @@
+header {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  margin-bottom: 100px;
+  border-bottom: solid #111111 3px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
+  padding: 20px 50px;
+  width: 100%;
+  height: 110px;
+  background-color: #E46977;
+  text-align: center;
+  white-space: normal;
+  position: relative;
+  z-index: 21;
+}
+
+header > div {
+  display: inline-table;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
+header > div > div {
+  display: table-row;
+}
+
+header > div > div > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+header > div > div > div:nth-child(1) {
+  width: 1px;
+}
+
+header > div > div > div:nth-child(2) {
+  width: 100%;
+  padding: 0px 20px;
+  text-align: left;
+}
+
+header > div > div > div:nth-child(3) {
+  width: 1px;
+  position: relative;
+}
+
+header a {
+  font: 16px PixelMania;
+  color: #F0F0F0;
+  text-decoration: none;
+}
+
+/**
+*** hamburgers
+**/
+
+.burger {
+  height: 3em;
+  width: 3em;
+  position: relative;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.burger.small {
+  font-size: 5px;
+  margin: 25px 15px 0px 15px;
+}
+
+.lines,
+.lines:after,
+.lines:before {
+  display: block;
+  content: '';
+  width: 100%;
+  border-radius: 0.25em;
+  background-color: #F0F0F0;
+  height: 0.25em;
+  position: absolute;
+  transition: 0.2s top 0.2s, 0.1s left, 0.2s transform, 0.4s background-color 0.2s;
+  transform: rotate(0);
+}
+
+.lines.small,
+.lines.small:after,
+.lines.small:before {
+  background-color: #8F99FF;
+  height: 0.5em;
+}
+
+.lines {
+  top: 50%;
+  margin-top: -0.125em;
+}
+
+.lines:after {
+  left: 0;
+  top: -1em;
+}
+
+.lines:before {
+  left: 1em;
+  top: 1em;
+}
+
+.lines:after,
+.lines:before {
+  width: 2em;
+}
+
+.open .lines,
+.open .lines:after,
+.open .lines:before {
+  transition: 0.2s background-color, 0.2s top, 0.2s left, 0.2s transform 0.15s;
+}
+
+.open .lines {
+  background-color: transparent;
+}
+
+.open .lines:before,
+.open .lines:after {
+  left: 0.5em;
+  top: 0px;
+}
+
+.open .lines:before {
+  transform: rotate(-45deg);
+}
+
+.open .lines:after {
+  transform: rotate(45deg);
+}
+
+/**
+*** navigation
+**/
+
+nav {
+  position: absolute;
+  top: 0px;
+  left: -400px;
+  height: 100%;
+  width: 400px;
+  padding: 140px 20px;
+  overflow-wrap: break-word;
+  z-index: 13;
+  opacity: 0;
+  transition: all 300ms ease-out;
+  transition-delay: 0ms;
+}
+
+nav.show {
+  left: 0px;
+  opacity: 1;
+  transform: translate(0, 0);
+  transition-delay: 300ms;
+}
+
+nav > div.love {
+  display: inline-table;
+}
+
+nav > div.love > div {
+  display: table-row;
+}
+
+nav > div.love > div > div {
+  display: table-cell;
+  white-space: nowrap;
+}
+
+nav > div.love > div > div:nth-child(1) {
+  text-align: right;
+  padding-left: 15px;
+}
+
+nav > div.love > div > div:nth-child(2) {
+  text-align: center;
+  width: 1px;
+}
+
+nav > div.love > div > div:nth-child(3) {
+  text-align: left;
+}
+
+nav > div.love span {
+  color: #F0F0F0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+nav > div.love img {
+  margin: 10px 8px;
+  display: inline;
+  vertical-align: middle;
+}
+
+nav > div.menu {
+  display: inline-table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav > div.menu div.menu-row {
+  display: table-row;
+}
+
+nav > div.menu div.menu-row > div {
+  display: table-cell;
+}
+
+nav > div.menu div.menu-row > div:nth-child(1) {
+  width: 15px;
+}
+
+nav > div.menu div.menu-row > div:nth-child(2) {
+  width: 100%;
+  text-align: left;
+}
+
+nav > div.menu div.menu-row-group {
+  display: none;
+}
+
+nav > div.menu div.menu-row-group.expand {
+  display: table-row-group;
+}
+
+nav > div.menu span.cate {
+  font: 18px HighScore;
+  color: #8F99FF;
+  cursor: pointer;
+}
+
+nav > div.menu a {
+  font: 16px PixelMatrix;
+  color: #F0F0F0;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+nav > div.menu a:hover {
+  color: #E46977;
+  text-decoration: underline;
+}
+
+nav > div.menu div.list {
+  display: none;
+}
+
+nav > div.menu div.list > div {
+  display: table-row;
+}
+
+nav > div.menu div.list > div > div {
+  display: table-cell;
+}
+
+nav > div.menu div.list.open {
+  display: table-row-group;
+}
+
+.bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 0%;
+  opacity: 0;
+}
+
+.blue1 {
+  border-right: solid black 2px;
+  background-color: #3D496E;
+  transition: all 500ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
+  transition-delay: 0ms;
+  z-index: 12;
+}
+
+.blue1.slide {
+  transition-delay: 150ms;
+}
+
+.blue2 {
+  border-right: solid black 2px;
+  background-color: #8F99FF;
+  transition: all 500ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
+  transition-delay: 150ms;
+  z-index: 11;
+}
+
+.blue2.slide {
+  transition-delay: 0ms;
+}
+
+@media only screen and (max-width: 640px) {
+  .slide {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .slide {
+    width: 400px;
+    opacity: 1;
+  }
+}

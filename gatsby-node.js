@@ -6,8 +6,6 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     sort: { fields: [frontmatter___category, fileAbsolutePath], order: ASC }
   ) {
     nodes {
-      id
-      fileAbsolutePath
       frontmatter {
         category
         title
@@ -15,16 +13,18 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         keywords
         date
       }
+      fileAbsolutePath
+      html
     }
   } }`)
 
   let menu = {}
 
   // create menu array of articles
-  result.data.allMarkdownRemark.nodes.forEach(({ id, frontmatter: fm, fileAbsolutePath: pa }) => {
+  result.data.allMarkdownRemark.nodes.forEach(({ html, frontmatter: fm, fileAbsolutePath: page }) => {
     // file basename
-    pa = pa.split(/[\\/]/).pop()
-    pa = pa.split(/\./).shift()
+    page = page.split(/[\\/]/).pop()
+    page = page.split(/\./).shift()
 
     // initialize with empty object
     if (!menu.hasOwnProperty(fm.category)) {
@@ -33,8 +33,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
     // push markdown structure
     menu[fm.category].push({
-      "id": id,
-      "pa": pa,
+      "html": html,
+      "page": page,
       "fm": fm
     })
   })
@@ -50,9 +50,9 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   Object.values(menu).forEach(top => {
     Object.values(top).forEach(sub => {
       createPage({
-        path: `/${sub.pa}`,
+        path: `/${sub.page}`,
         component: require.resolve("./src/layout/layoutinner.js"),
-        context: { "id": sub.id, "pa": sub.pa, "fm": sub.fm, "menu": menu }
+        context: { "html": sub.html, "page": sub.page, "fm": sub.fm, "menu": menu }
       })
   })})
 

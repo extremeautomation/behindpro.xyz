@@ -1,6 +1,11 @@
-html, body {
+* {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0px;
-  line-height: 1.5;
+  position: relative;
+  line-height: 2;
   font-family: "Montserrat",
                "Segoe UI",
                "Roboto",
@@ -12,57 +17,177 @@ html, body {
                "Segoe UI Emoji",
                "Segoe UI Symbol",
                "Noto Color Emoji";
+  font-size: 18px;
+  background-image: url(/img/corners/tr.png),
+                    url(/img/other/hr.png),
+                    url(/img/corners/bl.png),
+                    url(/img/other/hr.png);
+  background-position: calc(100% - 10px) 120px,
+                       50% 150px,
+                       10px calc(100% - 130px),
+                       50% calc(100% - 160px);
+  background-repeat: no-repeat;
 }
 
 @font-face {
   font-family: 'PixelMania';
   font-weight: 400;
   font-style: normal;
-  src: local('PixelMania'), url('../fonts/PixelMania.woff') format('woff');
+  src: local('PixelMania'), url('../font/PixelMania.woff') format('woff');
 }
 
-header div {
-  background-color: #E46977;
-  border-bottom: 3px solid #111111;
-  white-space: nowrap;
+@font-face {
+  font-family: 'HighScore';
+  font-weight: 400;
+  font-style: normal;
+  src: local('HighScore'), url('../font/HighScore.woff') format('woff');
 }
 
-header div img {
-  display: inline;
-  margin: 15px 40px;
-  vertical-align: middle;
+@font-face {
+  font-family: 'PixelMatrix';
+  font-weight: 400;
+  font-style: normal;
+  src: local('PixelMatrix'), url('../font/PixelMatrix.woff') format('woff');
 }
 
-header div a {
-  font: 16px Pixelmania;
-  color: #F0F0F0;
-  text-decoration: none;
+/**
+@font-face {
+  font-family: 'ArcadeLove';
+  font-weight: 400;
+  font-style: normal;
+  src: local('ArcadeLove'), url('../font/ArcadeLove.woff') format('woff');
 }
 
-footer {
-  background-color: #111111;
-  margin-top: 40px;
-  border-top: 3px solid #E46977;
-  padding: 20px 40px 20px 40px;
+@font-face {
+  font-family: 'GetReady';
+  font-weight: 400;
+  font-style: normal;
+  src: local('GetReady'), url('../font/GetReady.woff') format('woff');
 }
 
-footer div:nth-child(2) {
-  padding: 10px;
+@font-face {
+  font-family: 'InsertCoin';
+  font-weight: 400;
+  font-style: normal;
+  src: local('InsertCoin'), url('../font/InsertCoin.woff') format('woff');
 }
 
-footer div {
-  white-space: nowrap;
+@font-face {
+  font-family: 'Mytendo';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Mytendo'), url('../font/Mytendo.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PushStart';
+  font-weight: 400;
+  font-style: normal;
+  src: local('PushStart'), url('../font/PushStart.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SmallPrint';
+  font-weight: 400;
+  font-style: normal;
+  src: local('SmallPrint'), url('../font/SmallPrint.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SorryGameOver';
+  font-weight: 400;
+  font-style: normal;
+  src: local('SorryGameOver'), url('../font/SorryGameOver.woff') format('woff');
+}
+**/
+
+main,
+article {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 50px;
+  width: 100%;
   text-align: center;
 }
 
-footer div a {
-  color: #F0F0F0;
-  font-size: 16px;
-  text-decoration: none;
+main > div,
+article > div {
+  display: inline-table;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  text-align: justify;
 }
 
-footer div a img {
-  margin: 6px;
-  display: inline;
-  vertical-align: middle;
+.main-logo > img {
+  max-width: 500px;
+  object-fit: cover;
+  width: 100%;
+}
+
+article .main-logo > img {
+  margin: 0px 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-logo {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .main-logo {
+    display: inline;
+    float: right;
+  }
+}
+
+main strong {
+  margin: 0px 8px;
+  font: 12px PixelMania;
+}
+
+main .tools h1 {
+  margin: 0px;
+  padding: 0px;
+  font: bold 48px HighScore;
+  color: #3D496E;
+}
+
+main .tools img {
+  margin: 10px;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.pink {
+  color: #ff0066;
+}
+
+.green {
+  color: #005a00;
+}
+
+.salad {
+  color: #57C530;
+}
+
+.blue {
+  color: #2600c0;
+}
+
+.azure {
+  color: #0099ff;
+}
+
+.yellow {
+  color: #ffc400;
+}
+
+.orange {
+  color: #ff8000;
 }

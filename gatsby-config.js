@@ -19,7 +19,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `${__dirname}/static/images/icons/favicon.png`,
+        icon: `${__dirname}/static/img/icons/favicon.png`,
       },
     },
     `gatsby-plugin-gatsby-cloud`,
@@ -50,7 +50,7 @@ module.exports = {
         twitter: {
           handle: '@handle',
           site: '@site',
-          cardType: 'https://behindpro.xyz/static/images/icons/favicon.png',
+          cardType: 'https://behindpro.xyz/static/img/icons/favicon.png',
         },
       },
     },
