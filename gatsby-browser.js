@@ -2,8 +2,6 @@ document.body.onclick = (e) => {
   let found = false
 
   for (let elem of document.elementsFromPoint(e.clientX, e.clientY)) {
-    console.log(elem.tagName)
-
     if (elem.tagName === "HEADER" || elem.tagName === "FOOTER") {
       found = false
       break
@@ -18,6 +16,6 @@ document.body.onclick = (e) => {
     document.getElementById("burger").classList.remove("open")
     document.getElementById("menu").classList.remove("show")
     document.getElementById("blue1").classList.remove("slide")
-    document.getElementById("blue2").classList.remove("slide")  
+    document.getElementById("blue2").classList.remove("slide")
   }
 }

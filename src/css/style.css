@@ -145,7 +145,7 @@ main strong {
   font: 12px PixelMania;
 }
 
-main .tools h1 {
+main .tools > span {
   margin: 0px;
   padding: 0px;
   font: bold 48px HighScore;

@@ -52,6 +52,8 @@ const Header = ({ page, fm, menu }) => {
   const subMenuClick = (id) => {
     document.getElementById(`submenu${id}`).classList.toggle("open")
     document.getElementById(`sublist${id}`).classList.toggle("expand")
+    document.querySelector("main").height = 5000
+    console.log(document.querySelector("main").height)
   }
 
   return(<>
@@ -95,24 +97,24 @@ const Header = ({ page, fm, menu }) => {
         </div>
       </div>
       {Object.keys(menu).map((cate, index) =>
-      <div className="menu">
-        <div className="menu-row">
-          <div>
+      <div className="menu" key={`div1${index}`}>
+        <div className="menu-row" key={`div2${index}`}>
+          <div key={`div3${index}`}>
             <div id={`submenu${index}`} className="burger small" role="button" aria-label={cate} tabIndex="0"
-                 onClick={() => subMenuClick(index)} onKeyDown={null}>
-              <div className="lines small"></div>
+                 onClick={() => subMenuClick(index)} onKeyDown={null} key={`div4${index}`}>
+              <div className="lines small" key={`div5${index}`}></div>
             </div>
           </div>
-          <div>
+          <div key={`div6${index}`}>
             <span className="cate" role="link" tabIndex="0"
-                  onClick={() => subMenuClick(index)} onKeyDown={null}>{cate}</span>
+                  onClick={() => subMenuClick(index)} onKeyDown={null} key={`span7${index}`}>{cate}</span>
           </div>
         </div>
-        <div id={`sublist${index}`} className="menu-row-group">
-        {menu[cate].map(sub =>
-          <div className="menu-row">
-            <div>&nbsp;&nbsp;&hellip;</div>
-            <div><a href={sub.page}>{sub.page}</a></div>
+        <div id={`sublist${index}`} className="menu-row-group" key={`div8${index}`}>
+        {menu[cate].map((subcate, subindex) =>
+          <div className="menu-row" key={`div1${subindex}`}>
+            <div key={`div2${subindex}`}>&nbsp;&nbsp;&hellip;</div>
+            <div key={`div3${subindex}`}><a href={subcate.page} key={`a4${subindex}`}>{subcate.page}</a></div>
           </div>
         )}
         </div>

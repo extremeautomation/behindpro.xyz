@@ -16,9 +16,14 @@ const Layout = ({ pageContext: { menu } }) => {
         <p align="justify">The magic <strong className="red">AUTOMATION</strong> spells do not always work when the enterprise sorcerers have to blend several tools.</p>
         <p align="justify"><strong className="salad">NO MORE</strong> should they suffer!</p>
         {Object.keys(menu).map((cate, index) =>
-          <p align="center" className="tools">
-            <img src="/img/other/hr.png" className="hr" alt="line"/><h1>{cate.split("").map(elem => <span className={colors[Math.round(Math.random() * colors.length)]}>{elem}</span>)}:</h1>
-            {menu[cate].map(sub => <a href={sub.page}><img src={`/img/logos/png/${sub.page}.png`} width="150" className="logo" alt={sub.page}/></a>)}
+          <p align="center" className="tools" key={`p1${index}`}>
+            <img src="/img/other/hr.png" className="hr" alt="line" key={`img2${index}`}/>
+            <br/><span key={`h13${index}`}>
+            {cate.split("").map((elem, subindex) =>
+              <span className={colors[Math.round(Math.random() * colors.length)]} key={`span1${subindex}`}>{elem}</span>)}:
+            </span><br/>
+            {menu[cate].map((sub, subindex) =>
+              <a href={sub.page} key={`a1${subindex}`}><img src={`/img/logos/png/${sub.page}.png`} width="150" className="logo" alt={sub.page} key={`img2${subindex}`}/></a>)}
           </p>
         )}
       </div>
