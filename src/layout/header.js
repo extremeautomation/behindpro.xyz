@@ -63,26 +63,6 @@ const Header = ({ page, fm, menu }) => {
     }
   }
 
-  const observer = () => {
-    const menu    = document.getElementById("menu").getBoundingClientRect().bottom + window.scrollY + 160
-    const content = document.getElementById("main").getBoundingClientRect().bottom + window.scrollY + 120
-
-    document.getElementById("blue1").style.height = Math.max(menu, content) + "px"
-    document.getElementById("blue2").style.height = Math.max(menu, content) + "px"
-
-    document.querySelector("footer").style.position = "absolute"
-    document.querySelector("footer").style.left = "0px"
-    document.querySelector("footer").style.top = (Math.max(menu, content) - 190) + "px"
-  }
-
-  if (typeof window !== "undefined") {
-    window.onload = () => {
-      observer()
-      new MutationObserver(observer).observe(
-        document.getElementById("menu"), {attributes: true, childList: true, subtree: true})
-    }
-  }
-
   return(<>
     <Helmet {...helmet}/><GatsbySeo {...opengraph}/><ArticleJsonLd {...article}/>
     <header>
