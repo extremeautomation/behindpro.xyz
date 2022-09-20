@@ -2,7 +2,7 @@ footer {
   display: flex;
   flex-direction: column;
   min-width: 400px;
-  margin-top: 100px;
+  margin-top: 70px;
   border-top: solid #E46977 3px;
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.4);
   padding: 20px 50px;
@@ -11,7 +11,7 @@ footer {
   background-color: #111111;
   text-align: center;
   white-space: nowrap;
-  position: relative;
+  position: absolute;
   z-index: 22;
 }
 

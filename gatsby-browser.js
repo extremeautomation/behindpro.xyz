@@ -14,7 +14,7 @@ document.body.onclick = (e) => {
 
   if (!found) {
     document.getElementById("burger").classList.remove("open")
-    document.getElementById("menu").classList.remove("show")
+    document.getElementById("navi").classList.remove("show")
     document.getElementById("blue1").classList.remove("slide")
     document.getElementById("blue2").classList.remove("slide")
   }

@@ -2,7 +2,7 @@ header {
   display: flex;
   flex-direction: column;
   min-width: 400px;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
   border-bottom: solid #111111 3px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
   padding: 20px 50px;
@@ -139,7 +139,7 @@ header a {
 *** navigation
 **/
 
-nav {
+#navi {
   position: absolute;
   top: 0px;
   left: -400px;
@@ -153,114 +153,111 @@ nav {
   transition-delay: 0ms;
 }
 
-nav.show {
+#navi.show {
   left: 0px;
   opacity: 1;
-  transform: translate(0, 0);
   transition-delay: 300ms;
 }
 
-nav > div.love {
+#love {
   display: inline-table;
+  margin-left: 45px;
 }
 
-nav > div.love > div {
+#love > div {
   display: table-row;
 }
 
-nav > div.love > div > div {
+#love > div > div {
   display: table-cell;
   white-space: nowrap;
 }
 
-nav > div.love > div > div:nth-child(1) {
+#love > div > div:nth-child(1) {
   text-align: right;
-  padding-left: 15px;
 }
 
-nav > div.love > div > div:nth-child(2) {
+#love > div > div:nth-child(2) {
   text-align: center;
   width: 1px;
 }
 
-nav > div.love > div > div:nth-child(3) {
+#love > div > div:nth-child(3) {
   text-align: left;
 }
 
-nav > div.love span {
+#love span {
   color: #F0F0F0;
   font-size: 16px;
   cursor: pointer;
 }
 
-nav > div.love img {
+#love img {
   margin: 10px 8px;
   display: inline;
   vertical-align: middle;
 }
 
-nav > div.menu {
+#menu > .menu-item {
   display: inline-table;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-nav > div.menu div.menu-row {
+#menu > .menu-item .menu-row {
   display: table-row;
 }
 
-nav > div.menu div.menu-row > div {
+#menu > .menu-item .menu-row > div {
   display: table-cell;
 }
 
-nav > div.menu div.menu-row > div:nth-child(1) {
+#menu > .menu-item .menu-row > div:nth-child(1) {
   width: 15px;
 }
 
-nav > div.menu div.menu-row > div:nth-child(2) {
+#menu > .menu-item .menu-row > div:nth-child(2) {
   width: 100%;
   text-align: left;
 }
 
-nav > div.menu div.menu-row-group {
+#menu > .menu-item .menu-row-group {
   display: none;
 }
 
-nav > div.menu div.menu-row-group.expand {
+#menu > .menu-item .menu-row-group.expand {
   display: table-row-group;
 }
 
-nav > div.menu span.cate {
+#menu > .menu-item span.cate {
   font: 18px HighScore;
   color: #8F99FF;
   cursor: pointer;
 }
 
-nav > div.menu a {
+#menu > .menu-item a {
   font: 16px PixelMatrix;
   color: #F0F0F0;
   text-transform: capitalize;
   text-decoration: none;
 }
 
-nav > div.menu a:hover {
+#menu > .menu-item a:hover {
   color: #E46977;
   text-decoration: underline;
 }
 
-nav > div.menu div.list {
+#menu > .menu-item div.list {
   display: none;
 }
 
-nav > div.menu div.list > div {
+#menu > .menu-item div.list > div {
   display: table-row;
 }
 
-nav > div.menu div.list > div > div {
+#menu > .menu-item div.list > div > div {
   display: table-cell;
 }
 
-nav > div.menu div.list.open {
+#menu > .menu-item div.list.open {
   display: table-row-group;
 }
 

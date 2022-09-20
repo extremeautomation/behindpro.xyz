@@ -8,7 +8,7 @@ const Layout = ({ pageContext: { menu } }) => {
  
   return(<>
     <Header menu={menu}/>
-    <main>
+    <main id="main">
       <div>
         <div className="main-logo"><img src="/img/other/office.gif" alt="office"/></div>
         <p align="justify">This collection of manuscripts is devoted to fellow <strong className="red">AUTOMATION</strong> fighters who still live behind the walls of the enterprise <strong className="blue">HTTP</strong> <strong className="yellow">PROXY</strong> within the dungeon of the corporate firewall.</p>
