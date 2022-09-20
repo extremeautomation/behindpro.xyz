@@ -75,10 +75,12 @@ const Header = ({ page, fm, menu }) => {
     document.querySelector("footer").style.top = (Math.max(menu, content) - 190) + "px"
   }
 
-  window.onload = () => {
-    observer()
-    new MutationObserver(observer).observe(
-      document.getElementById("menu"), {attributes: true, childList: true, subtree: true})
+  if (typeof window !== "undefined") {
+    window.onload = () => {
+      observer()
+      new MutationObserver(observer).observe(
+        document.getElementById("menu"), {attributes: true, childList: true, subtree: true})
+    }
   }
 
   return(<>
