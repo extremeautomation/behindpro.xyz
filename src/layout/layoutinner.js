@@ -4,16 +4,15 @@ import Footer from "./footer"
 import "../css/style.css"
 
 const LayoutInner = ({ pageContext: { html, page, fm, menu } }) => {
-  return(<>
-    <Header page={page} fm={fm} menu={menu}/>
-    <main id="main">
-      <div>
-        <div className="main-logo"><img src={`/img/logos/png/${page}.png`} alt={page}/></div>
-        <p align="justify">{html}</p>
-      </div>
-    </main>
-    <Footer/>
-  </>)
+  return(
+    <div align="center">
+      <Header page={page} fm={fm} menu={menu}/>
+      <main id="main">
+        <div className="logo-container"><img src={`/img/logos/png/${page}.png`} className="logo" alt={page}/></div>
+        <div className="article" dangerouslySetInnerHTML={{__html: html}}></div>
+      </main>
+      <Footer/>
+    </div>)
 }
 
 export default LayoutInner

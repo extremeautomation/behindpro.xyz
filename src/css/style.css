@@ -17,11 +17,6 @@ body {
                "Segoe UI Symbol",
                "Noto Color Emoji";
   font-size: 18px;
-  background-position: calc(100% - 10px) 120px,
-                       50% 150px,
-                       10px calc(100% - 130px),
-                       50% calc(100% - 160px);
-  background-repeat: no-repeat;
 }
 
 @font-face {
@@ -97,88 +92,132 @@ body {
 **/
 
 main {
+  display: inline-block;
   padding: 0px 50px;
   width: 100%;
+  min-width: 300px;
+  max-width: 1000px;
   text-align: center;
 }
 
-main > div {
-  display: inline-table;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
-  text-align: justify;
+.logo-container {
+  text-align: center;
 }
 
-.main-logo > img {
+.logo {
+  display: inline-block;
+  min-width: 300px;
   max-width: 500px;
-  object-fit: cover;
-  width: 100%;
-}
-
-main .main-logo > img {
-  margin: 0px 20px;
+  width: calc(100vw - 100px);
+  height: auto;
 }
 
 @media only screen and (max-width: 1000px) {
-  .main-logo {
-    display: block;
+  .logo {
     float: none;
-    text-align: center;
   }
 }
 
 @media only screen and (min-width: 1000px) {
-  .main-logo {
-    display: inline;
+  .logo {
     float: right;
   }
 }
 
-main strong {
-  margin: 0px 8px;
+.intro {
+  min-width: 300px;
+  text-align: justify;
+}
+
+.intro strong {
+  margin: 0px 5px;
   font: 12px PixelMania;
 }
 
-main .tools > span {
-  margin: 0px;
-  padding: 0px;
-  font: bold 48px HighScore;
-  color: #3D496E;
+.tools {
+  min-width: 300px;
+  line-height: 1;
+  text-align: center;
 }
 
-main .tools img {
-  margin: 10px;
+.tools img {
+  margin: 0px 10px;
 }
 
-.red {
+.tools strong {
+  font: bold 40px HighScore;
+}
+
+.tools .spacer {
+  display: inline-block;
+  width: 20px;
+}
+
+.article {
+  min-width: 300px;
+  text-align: justify;
+}
+
+.fgred {
   color: #ff0000;
 }
 
-.pink {
+.fgpink {
   color: #ff0066;
 }
 
-.green {
+.fggreen {
   color: #005a00;
 }
 
-.salad {
+.fgsalad {
   color: #57C530;
 }
 
-.blue {
+.fgblue {
   color: #2600c0;
 }
 
-.azure {
+.fgazure {
   color: #0099ff;
 }
 
-.yellow {
+.fgyellow {
   color: #ffc400;
 }
 
-.orange {
+.fgorange {
   color: #ff8000;
+}
+
+.bgred {
+  background-color: #ff0000;
+}
+
+.bgpink {
+  background-color: #ff0066;
+}
+
+.bggreen {
+  background-color: #005a00;
+}
+
+.bgsalad {
+  background-color: #57C530;
+}
+
+.bgblue {
+  background-color: #2600c0;
+}
+
+.bgazure {
+  background-color: #0099ff;
+}
+
+.bgyellow {
+  background-color: #ffc400;
+}
+
+.bgorange {
+  background-color: #ff8000;
 }

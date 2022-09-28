@@ -9,3 +9,19 @@ date: 2022-05-21
 # CONFIGURATION
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum habitasse ullamcorper pulvinar nam aenean sed elit morbi nunc. Sit at mauris eget nisl nibh. Vitae sapien sit dictum at turpis laoreet. Lobortis sagittis a laoreet quam.
+
+```javascript
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum habitasse ullamcorper pulvinar nam aenean sed elit morbi nunc. Sit at mauris eget nisl nibh. Vitae sapien sit dictum at turpis laoreet. Lobortis sagittis a laoreet quam.
