@@ -26,8 +26,11 @@ const Layout = ({ pageContext: { menu } }) => {
                 {word.split("").map((letter, letteri) =>
                   <table cellSpacing={0} cellPadding={0} style={{display: 'inline-table'}} key={`table1${letteri}`}>
                   <tbody>
-                  <tr height={3}>
+                  <tr height="3">
                     <td className={`bg${colors[Math.round(Math.random() * (colors.length - 1))]}`}></td>
+                  </tr>
+                  <tr height="7">
+                    <td></td>
                   </tr>
                   <tr>
                     <td className={`fg${colors[Math.round(Math.random() * (colors.length - 1))]}`}><strong>{letter}</strong></td>
