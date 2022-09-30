@@ -1,76 +1,20 @@
 ---
 category: HTTP Tools
 title: Curl
-description: Curl is used in command lines or scripts to transfer data. curl is also used in cars, television sets, routers, printers, audio equipment, mobile phones, tablets, settop boxes, media players and is the Internet transfer engine for thousands of software applications in over ten billion installations.
-keywords: Windows, Linux, MacOS
-date: 2022-05-21
+description: Curl is a tool for transferring data from or to a server.
+keywords: Curl, Proxy
+date: 2022-01-01
 ---
+# What is Curl
 
-# CONFIGURATION
+Curl is a tool for transferring data from or to a server. It supports dozens of Internet protocols among them are: HTTP, HTTPS, FTP, FTPS, SFTP, SCP and SMB. Curl has support for HTTP and HTTPS proxies getting HTTP links. But for other protocols usually SOCKS4 or SOCKS5 proxies are used.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum habitasse ullamcorper pulvinar nam aenean sed elit morbi nunc. Sit at mauris eget nisl nibh. Vitae sapien sit dictum at turpis laoreet. Lobortis sagittis a laoreet quam.
+# Configuration
 
-```
-import (
-"io/ioutil"
-"log"
-"net/http"
-"net/url"
-)
+The simpliest way to route Curl traffic through proxy is to add command line option `-x` to set up proxy location and protocol, and to add command line option `-U` for proxies that need authorisation in format:
+
+```bash
+curl -x "[protocol://]host[:port]" -U "login:password" -s https://behindpro.xyz/testfile | figlet
 ```
 
-Dolor sit amet, consectetur adipiscing elit. Facilisis cursus nibh neque tincidunt a arcu morbi. Hendrerit leo ullamcorper dui interdum ornare lectus. Nulla placerat facilisis vel nisl in tortor. Vel turpis nulla donec augue risus turpis turpis.
-
-# EXAMPLE 1
-
-Consectetur adipiscing elit. In ultricies molestie.
-
-```
-func main() {
-
-//creating the proxyURL
-proxyStr := "http://localhost:7000"
-proxyURL, err := url.Parse(proxyStr)
-if err != nil {
-log.Println(err)
-}
-
-//creating the URL to be loaded through the proxy
-urlStr := "http://httpbin.org/get"
-url, err := url.Parse(urlStr)
-if err != nil {
-log.Println(err)
-}
-```
-
-Eu viverra dolor eget cursus tortor. Id eros fermentum, amet eros, quisque. Ut vitae mauris proin blandit viverra.
-
-# EXAMPLE 2
-
-Blandit cursus ornare cursus mauris ipsum malesuada consectetur est. Tincidunt nulla nunc tellus ultricies pharetra turpis pellentesque pellentesque leo. Amet tellus tincidunt purus malesuada volutpat, pretium. Eget urna lacinia donec porttitor fermentum sed volutpat. Tellus nullam neque, amet ultrices. Enim sagittis libero eu nisi. Duis justo lectus maecenas ornare risus sit sem. Mi sagittis amet sollicitudin sed amet.
-
-```
-//adding the proxy settings to the Transport object
-transport := &http.Transport{
-Proxy: http.ProxyURL(proxyURL),
-}
-
-//adding the Transport object to the http Client
-client := &http.Client{
-Transport: transport,
-}
-
-//generating the HTTP GET request
-request, err := http.NewRequest("GET", url.String(), nil)
-if err != nil {
-log.Println(err)
-}
-
-//calling the URL
-response, err := client.Do(request)
-if err != nil {
-log.Println(err)
-}
-```
-
-Auctor molestie fermentum, non eu posuere. Mauris in non a egestas. Scelerisque amet, nibh morbi felis, netus. Ultrices netus donec non eget egestas diam fermentum, risus, sem. Tincidunt nulla habitant egestas suspendisse odio sed. Libero, risus, sagittis eget suspendisse egestas dignissim. Sed arcu arcu tincidunt elementum pretium senectus erat. Vitae praesent quis hendrerit viverra turpis amet, faucibus eget. Tortor et sit vulputate diam.
+Curl supports protocols: `https://` or `http://` for HTTP resources and `socks4://` or `socks5://` schemes for all type of resources.
