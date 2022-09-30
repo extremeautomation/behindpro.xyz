@@ -122,7 +122,7 @@ const Header = ({ page, fm, menu }) => {
             {menu[cate].map((subcate, subindex) =>
               <div className="menu-row" key={`div1${subindex}`}>
                 <div key={`div2${subindex}`}>&nbsp;&nbsp;&hellip;</div>
-                <div key={`div3${subindex}`}><a href={subcate.page} key={`a4${subindex}`}>{subcate.page}</a></div>
+                <div key={`div3${subindex}`}><a href={`/${subcate.page}`} key={`a4${subindex}`}>{subcate.page}</a></div>
               </div>
             )}
           </div>
