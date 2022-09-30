@@ -1,76 +1,33 @@
 ---
 category: HTTP Tools
-title: Web page crawler
-description: GNU Wget (or just Wget, formerly Geturl, also written as its package name, wget) is a computer program that retrieves content from web servers. It is part of the GNU Project. Its name derives from "World Wide Web" and "get." It supports downloading via HTTP, HTTPS, and FTP.
-keywords: Windows, Linux, MacOS
-date: 2022-05-21
+title: Wget
+description: GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
+keywords: wget, proxy
+date: 2022-01-01
 ---
 
-# CONFIGURATION
+## Configuration
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum habitasse ullamcorper pulvinar nam aenean sed elit morbi nunc. Sit at mauris eget nisl nibh. Vitae sapien sit dictum at turpis laoreet. Lobortis sagittis a laoreet quam.
+GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
 
-```
-import (
-"io/ioutil"
-"log"
-"net/http"
-"net/url"
-)
-```
+There are several ways to route Wget traffic through a proxy.
 
-Dolor sit amet, consectetur adipiscing elit. Facilisis cursus nibh neque tincidunt a arcu morbi. Hendrerit leo ullamcorper dui interdum ornare lectus. Nulla placerat facilisis vel nisl in tortor. Vel turpis nulla donec augue risus turpis turpis.
+If you need only single time solution then the easiest way is to pass environment variable in the command line executing Wget:
 
-# EXAMPLE 1
-
-Consectetur adipiscing elit. In ultricies molestie.
-
-```
-func main() {
-
-//creating the proxyURL
-proxyStr := "http://localhost:7000"
-proxyURL, err := url.Parse(proxyStr)
-if err != nil {
-log.Println(err)
-}
-
-//creating the URL to be loaded through the proxy
-urlStr := "http://httpbin.org/get"
-url, err := url.Parse(urlStr)
-if err != nil {
-log.Println(err)
-}
+```bash
+https_proxy=username:password@proxy_host:proxy_port wget -qO - https://behindpro.xyz/testfile | figlet
 ```
 
-Eu viverra dolor eget cursus tortor. Id eros fermentum, amet eros, quisque. Ut vitae mauris proin blandit viverra.
+Remember to change environment variable from `https_proxy` to `http_proxy` if you are downloading file over HTTP protocol:
 
-# EXAMPLE 2
-
-Blandit cursus ornare cursus mauris ipsum malesuada consectetur est. Tincidunt nulla nunc tellus ultricies pharetra turpis pellentesque pellentesque leo. Amet tellus tincidunt purus malesuada volutpat, pretium. Eget urna lacinia donec porttitor fermentum sed volutpat. Tellus nullam neque, amet ultrices. Enim sagittis libero eu nisi. Duis justo lectus maecenas ornare risus sit sem. Mi sagittis amet sollicitudin sed amet.
-
-```
-//adding the proxy settings to the Transport object
-transport := &http.Transport{
-Proxy: http.ProxyURL(proxyURL),
-}
-
-//adding the Transport object to the http Client
-client := &http.Client{
-Transport: transport,
-}
-
-//generating the HTTP GET request
-request, err := http.NewRequest("GET", url.String(), nil)
-if err != nil {
-log.Println(err)
-}
-
-//calling the URL
-response, err := client.Do(request)
-if err != nil {
-log.Println(err)
-}
+```bash
+http_proxy=username:password@proxy_host:proxy_port wget -qO - http://behindpro.xyz/testfile | figlet
 ```
 
-Auctor molestie fermentum, non eu posuere. Mauris in non a egestas. Scelerisque amet, nibh morbi felis, netus. Ultrices netus donec non eget egestas diam fermentum, risus, sem. Tincidunt nulla habitant egestas suspendisse odio sed. Libero, risus, sagittis eget suspendisse egestas dignissim. Sed arcu arcu tincidunt elementum pretium senectus erat. Vitae praesent quis hendrerit viverra turpis amet, faucibus eget. Tortor et sit vulputate diam.
+But if you are using Wget through proxy on the ongoing basis it is more convenient to add some lines to Wget configuration file located at `/etc/wgetrc` (or `~/.wgetrc`):
+
+```ini
+use_proxy=on
+http_proxy=proxy_host:proxy_port
+https_proxy=proxy_host:proxy_port
+```
